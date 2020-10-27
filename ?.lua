@@ -80,7 +80,7 @@ while wait(2) do
  if not IsAlive() then 
      warn('waiting for the game to start.') 
  end
- if tonumber(CheckAmount()) == "50" then
+ if tonumber(CheckAmount()) == 50 then
     game:GetService("TeleportService"):Teleport(game.PlaceId)
  end
  if not _G.Searching and IsAlive() then
