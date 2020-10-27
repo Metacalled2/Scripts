@@ -88,5 +88,4 @@ while wait(2) do
     warn('in-game, looking!')
     Start()
  end
- if 
 end
