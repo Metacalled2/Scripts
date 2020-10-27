@@ -11,7 +11,8 @@ _G.IsActiveTeleport = false
 _G.YeThatExists = false
 
 local function FakeHumanoid()
- if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+ if game.Players.LocalPlayer.Character then
+     if not game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then return end
  local Hum = game.Players.LocalPlayer.Character.Humanoid:Clone()
  game.Players.LocalPlayer.Character.Humanoid:Destroy()
  Hum.Parent = game.Players.LocalPlayer.Character
