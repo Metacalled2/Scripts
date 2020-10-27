@@ -69,7 +69,7 @@ print('load [2]')
 game:GetService"RunService".Stepped:Connect(function()
   if not IsAlive() then return end
   wait(180)
-  syn.queue_on_teleport("wait(10) loadstring(game:HttpGet'link')")
+  syn.queue_on_teleport("wait(10) loadstring(game:HttpGet'https://raw.githubusercontent.com/bonefraktur/Scripts/main/%3F.lua')()")
   game:GetService("TeleportService"):Teleport(game.PlaceId)
 end)
 
