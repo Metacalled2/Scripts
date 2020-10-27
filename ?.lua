@@ -1,3 +1,5 @@
+print('load [1]')
+
 local ToTween = game.Players.LocalPlayer.Character.HumanoidRootPart
 
 local function TweenToCoin(Coin)
@@ -62,11 +64,16 @@ end
 
 end
 
+print('load [2]')
+
 game:GetService"RunService".Stepped:Connect(function()
+  if not IsAlive() then return end
   wait(180)
-  syn.queue_on_teleport("wait(10) loadstring(game:HttpGet'https://raw.githubusercontent.com/bonefraktur/Scripts/main/%3F.lua')")
+  syn.queue_on_teleport("wait(10) loadstring(game:HttpGet'link')")
   game:GetService("TeleportService"):Teleport(game.PlaceId)
 end)
+
+print('load [3]')
 
 while wait(2) do
  if not IsAlive() then 
