@@ -24,6 +24,13 @@ local function IsAlive()
 
 end
 
+local function CheckAmount()
+  local Value = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("MainGUI"):WaitForChild("Game"):WaitForChild("CashBag")
+  local WValu = Value:WaitForChild("CoinIcon"):WaitForChild("Coins")
+  
+  return WValu.Text
+end
+
 local function LobbyCheck()
   local Value = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("MainGUI"):WaitForChild("Game"):WaitForChild("Waiting").Visible
   
@@ -70,16 +77,16 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/bonefraktur/Scripts/m
 print('load [2]')
 
 while wait(2) do
- if not _G.IsActiveTeleport then
-  _G.IsActiveTeleport = true
-  wait(180)
-  game:GetService("TeleportService"):Teleport(game.PlaceId)
-end
  if not IsAlive() then 
      warn('waiting for the game to start.') 
  end
+ if tonumber(CheckAmount()) == "50" then
+    game:GetService("TeleportService"):Teleport(game.PlaceId)
+ end
  if not _G.Searching and IsAlive() then
+    warn(tonumber(CheckAmount()))
     warn('in-game, looking!')
     Start()
-  end
+ end
+ if 
 end
