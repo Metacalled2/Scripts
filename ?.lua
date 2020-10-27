@@ -8,6 +8,7 @@ end
 
 _G.Searching = false
 _G.IsActiveTeleport = false
+_G.YeThatExists = false
 
 local function FakeHumanoid()
  if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
@@ -80,7 +81,7 @@ while wait(2) do
  if not IsAlive() then 
      warn('waiting for the game to start.') 
  end
- if tonumber(CheckAmount()) == 50 then
+ if tonumber(CheckAmount()) == 50 or _G.YeThatExists and not IsAlive() then
     game:GetService("TeleportService"):Teleport(game.PlaceId)
  end
  if not _G.Searching and IsAlive() then
