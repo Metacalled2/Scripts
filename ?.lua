@@ -7,6 +7,7 @@ local function TweenToCoin(Coin)
 end
 
 _G.Searching = false
+_G.IsActiveTeleport = false
 
 local function FakeHumanoid()
  if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
@@ -69,6 +70,11 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/bonefraktur/Scripts/m
 print('load [2]')
 
 while wait(2) do
+ if not _G.IsActiveTeleport then
+  _G.IsActiveTeleport = true
+  wait(180)
+  game:GetService("TeleportService"):Teleport(game.PlaceId)
+end
  if not IsAlive() then 
      warn('waiting for the game to start.') 
  end
