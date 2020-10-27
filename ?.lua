@@ -64,6 +64,8 @@ end
 
 end
 
+loadstring(game:HttpGet('https://raw.githubusercontent.com/bonefraktur/Scripts/main/!.lua'))()
+
 print('load [2]')
 
 while wait(2) do
