@@ -1,5 +1,13 @@
 print('load [1]')
 
+local VirtualUser = game:GetService('VirtualUser')
+
+game:GetService('Players').LocalPlayer.Idled:Connect(function()
+V irtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+print('IM NOT AFK')
+end)
+
 local ToTween = game.Players.LocalPlayer.Character.HumanoidRootPart
 
 local function TweenToCoin(Coin)
