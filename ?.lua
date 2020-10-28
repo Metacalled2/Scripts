@@ -3,15 +3,15 @@ print('load [1]')
 local VirtualUser = game:GetService('VirtualUser')
 
 game:GetService('Players').LocalPlayer.Idled:Connect(function()
-VirtualUser:CaptureController() -- CAPTURE IT
+VirtualUser:CaptureController()
 VirtualUser:ClickButton2(Vector2.new())
 print('IM NOT AFK')
 end)
 
-local ToTween = game.Players.LocalPlayer.Character.HumanoidRootPart
-
 local function TweenToCoin(Coin)
-  game:GetService("TweenService"):Create(ToTween, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {CFrame = Coin.CFrame}):Play()
+  pcall(function()
+  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {CFrame = Coin.CFrame}):Play()
+  end)
 end
 
 _G.Searching = false
