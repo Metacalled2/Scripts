@@ -82,7 +82,7 @@ end
 
 end
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/bonefraktur/Scripts/main/!.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/bonefraktur/Scripts/main/MurderMystery2/Extra.lua'))()
 
 print('load [2]')
 
