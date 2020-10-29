@@ -1,5 +1,11 @@
 print('load [1]')
 
+game:GetService("StarterGui"):SetCore("SendNotification",{
+ Title = "MM2 Candy Farm",
+ Text = "Thanks for using MM2 Candy Farm, just to let you know i re-directed !.lua to the main repository!",
+ Duration = 10,
+})
+
 local VirtualUser = game:GetService('VirtualUser')
 
 game:GetService('Players').LocalPlayer.Idled:Connect(function()
